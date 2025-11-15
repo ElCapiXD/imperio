@@ -1,0 +1,124 @@
+:root {
+  --gold: #d4af37;
+  --bg-dark: #0b0b0b;
+  --muted: #bdbdbd;
+}
+
+.memberships-page {
+  background: var(--bg-dark);
+  color: #fff;
+  padding: 16px;
+  min-height: 100%;
+
+  .hero {
+    text-align: center;
+    margin: 24px 0 16px 0;
+
+    h2 {
+      font-size: 22px;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+  }
+
+.plans-container {
+  padding: 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.plan-card {
+  flex: 1 1 260px; /* ancho base de cada tarjeta */
+  max-width: 300px;
+}
+
+
+  .plan-card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    border-radius: 16px;
+    border: 1px solid rgba(212,175,55,0.15);
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 26px rgba(212,175,55,0.25);
+    }
+
+    .plan-header {
+      text-align: center;
+      margin-bottom: 12px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 4px 0 0 0;
+        color: var(--muted);
+      }
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 16px 0;
+
+      li {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 8px;
+
+        ion-icon {
+          color: var(--gold);
+          margin-right: 8px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .btn-gold {
+      --background: var(--gold);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(212,175,55,0.18);
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+    }
+  }
+}
+
+/* Header estilo oscuro */
+ion-toolbar.toolbar-dark {
+  --background: transparent;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  ion-title {
+    font-weight: 800;
+    font-size: 20px;
+  }
+
+  ion-icon {
+    color: var(--gold);
+  }
+}

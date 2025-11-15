@@ -1,0 +1,46 @@
+<ion-content class="login-page" fullscreen>
+  <div class="bg-gradient"></div>
+
+  <div class="container">
+    <div class="brand">
+      <div class="small-title">Bienvenido a</div>
+      <div class="logo">IMPERIO <span>GYM</span></div>
+    </div>
+
+    <div class="card">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-input formControlName="email" placeholder="Usuario" type="text"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="email.invalid && (email.touched || email.dirty)">
+          {{ getEmailError() }}
+        </div>
+
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input formControlName="password" placeholder="Contraseña" type="password"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="password.invalid && (password.touched || password.dirty)">
+          {{ getPasswordError() }}
+        </div>
+
+        <ion-button expand="block" size="large" type="submit" [disabled]="loginForm.invalid" class="btn-gold">
+          INICIAR
+        </ion-button>
+      </form>
+
+      <div class="helper-row">
+        <button ion-button (click)="goToRecover()" class="link-btn">¿Olvidaste la contraseña?</button>
+        <button ion-button (click)="goToRegister()" class="link-btn">Crear cuenta</button>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <ion-button fill="clear" size="small" (click)="goBack()">
+        ← Volver
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-title>IMPERIO <span>GYM</span></ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-page" fullscreen>
+  <div class="welcome-section">
+    <h2>Bienvenido 👋</h2>
+    <p>Elige una opción para continuar</p>
+  </div>
+
+  <div class="card-grid">
+    <ion-card (click)="navigateTo('Rutinas')" class="card-option">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <h3>Rutinas</h3>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('Progreso')" class="card-option">
+      <ion-icon name="stats-chart-outline"></ion-icon>
+      <h3>Progreso</h3>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('Perfil')" class="card-option">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <h3>Perfil</h3>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('Ajustes')" class="card-option">
+      <ion-icon name="settings-outline"></ion-icon>
+      <h3>Ajustes</h3>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('Membresías')" class="card-option">
+      <ion-icon name="card-outline"></ion-icon>
+      <h3>Membresías</h3>
+    </ion-card>
+
+  </div>
+</ion-content>
+

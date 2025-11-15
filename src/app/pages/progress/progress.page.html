@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Progreso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="progress-page" fullscreen>
+  <div class="hero">
+    <h2>Tu Progreso General</h2>
+    <p>¡Sigue avanzando y alcanza tus metas!</p>
+  </div>
+
+  <div class="progress-grid">
+    <ion-card class="progress-card">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <h3>{{ progreso.diasEntrenados }}</h3>
+      <p>Días entrenados</p>
+    </ion-card>
+
+    <ion-card class="progress-card">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <h3>{{ progreso.rutinasCompletadas }}</h3>
+      <p>Rutinas completadas</p>
+    </ion-card>
+
+    <ion-card class="progress-card">
+      <ion-icon name="time-outline"></ion-icon>
+      <h3>{{ progreso.tiempoEntrenado }}</h3>
+      <p>Tiempo total</p>
+    </ion-card>
+
+    <ion-card class="progress-card">
+      <ion-icon name="body-outline"></ion-icon>
+      <h3>{{ progreso.pesoActual }} kg</h3>
+      <p>Peso corporal</p>
+    </ion-card>
+  </div>
+
+  <div class="footer">
+    <ion-button expand="block" class="btn-gold" (click)="verHistorial()">
+      <ion-icon name="stats-chart-outline" slot="start"></ion-icon>
+      Ver historial
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" fill="clear" class="back-btn">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Crear cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="register-page" fullscreen>
+  <div class="bg-gradient"></div>
+
+  <div class="container">
+    <div class="brand">
+      <div class="small-title">Regístrate en</div>
+      <div class="logo">IMPERIO <span>GYM</span></div>
+    </div>
+
+    <div class="card">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Nombre -->
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-input formControlName="nombre" placeholder="Nombre completo" type="text"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="nombre.invalid && (nombre.touched || nombre.dirty)">
+          <span *ngIf="nombre.hasError('required')">El nombre es obligatorio.</span>
+          <span *ngIf="nombre.hasError('minlength')">Mínimo 3 caracteres.</span>
+        </div>
+
+        <!-- DNI -->
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="id-card-outline" slot="start"></ion-icon>
+          <ion-input formControlName="dni" placeholder="DNI (8 dígitos)" inputmode="numeric" maxlength="8"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="dni.invalid && (dni.touched || dni.dirty)">
+          <span *ngIf="dni.hasError('required')">El DNI es obligatorio.</span>
+          <span *ngIf="dni.hasError('pattern')">El DNI debe tener exactamente 8 dígitos.</span>
+        </div>
+
+        <!-- Correo -->
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-input formControlName="correo" placeholder="Correo" type="email" inputmode="email"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="correo.invalid && (correo.touched || correo.dirty)">
+          <span *ngIf="correo.hasError('required')">El correo es obligatorio.</span>
+          <span *ngIf="correo.hasError('email')">Ingresa un correo válido.</span>
+        </div>
+
+        <!-- Teléfono -->
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          <ion-input formControlName="telefono" placeholder="Teléfono (9 dígitos)" inputmode="numeric" maxlength="9"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="telefono.invalid && (telefono.touched || telefono.dirty)">
+          <span *ngIf="telefono.hasError('required')">El teléfono es obligatorio.</span>
+          <span *ngIf="telefono.hasError('pattern')">El teléfono debe tener exactamente 9 dígitos.</span>
+        </div>
+
+        <!-- Dirección -->
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="location-outline" slot="start"></ion-icon>
+          <ion-input formControlName="direccion" placeholder="Dirección" type="text"></ion-input>
+        </ion-item>
+        <div class="error" *ngIf="direccion.invalid && (direccion.touched || direccion.dirty)">
+          <span *ngIf="direccion.hasError('required')">La dirección es obligatoria.</span>
+        </div>
+
+        <!-- 🔐 Contraseña -->
+        <ion-item class="input-item" lines="none">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input
+            formControlName="password"
+            placeholder="Contraseña"
+            type="password">
+          </ion-input>
+        </ion-item>
+        <div class="error" *ngIf="password.invalid && (password.touched || password.dirty)">
+          <span *ngIf="password.hasError('required')">La contraseña es obligatoria.</span>
+          <span *ngIf="password.hasError('minlength')">Mínimo 6 caracteres.</span>
+        </div>
+
+        <!-- Botón -->
+        <ion-button expand="block" size="large" type="submit" [disabled]="registerForm.invalid" class="btn-gold">
+          REGISTRARSE
+        </ion-button>
+      </form>
+
+      <div class="helper-row">
+        <div class="have-account">¿Ya tienes cuenta?</div>
+        <button ion-button (click)="goToLogin()" class="link-btn">Inicia sesión</button>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <ion-button fill="clear" (click)="goBack()" size="small">
+        ← Volver
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

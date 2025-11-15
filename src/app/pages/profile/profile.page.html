@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Perfil de Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile-page" fullscreen>
+
+  <!-- Mostrar contenido solo cuando el user esté cargado -->
+  <ng-container *ngIf="user; else cargando">
+
+    <div class="profile-header">
+      <div class="avatar">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </div>
+      <h2>{{ user.nombre }}</h2>
+      <p class="membresia">Membresía: {{ user?.membresia || 'Sin membresía activa' }}</p>
+
+    </div>
+
+    <ion-list class="data-list">
+      <ion-item>
+        <ion-label>
+          <strong>Correo:</strong>
+          <p>{{ user.correo }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>DNI:</strong>
+          <p>{{ user.dni }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>Fecha de Nacimiento:</strong>
+          <p>{{ user.nacimiento || '27/02/2001' }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>Teléfono:</strong>
+          <p>{{ user.telefono }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <strong>Dirección:</strong>
+          <p>{{ user.direccion }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="buttons">
+      <ion-button expand="block" class="btn-edit" (click)="editarPerfil()">
+        <ion-icon name="create-outline" slot="start"></ion-icon>
+        Editar Perfil
+      </ion-button>
+
+      <ion-button expand="block" class="btn-logout" (click)="cerrarSesion()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Cerrar Sesión
+      </ion-button>
+    </div>
+
+  </ng-container>
+
+  <!-- Mensaje de carga mientras se obtienen los datos -->
+  <ng-template #cargando>
+    <div class="loading-container" style="text-align:center; margin-top: 40%;">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Cargando perfil...</p>
+    </div>
+  </ng-template>
+
+</ion-content>

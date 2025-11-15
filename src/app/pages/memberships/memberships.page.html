@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tipos de Membresías</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="memberships-page" fullscreen>
+  <div class="hero">
+    <h2>Elige tu plan ideal</h2>
+    <p>Disfruta de beneficios exclusivos según tu tipo de membresía</p>
+  </div>
+
+  <div class="plans-container">
+    <ion-card *ngFor="let plan of plans" class="plan-card" [style.border-color]="plan.color">
+      <div class="plan-header" [style.color]="plan.color">
+        <h3>{{ plan.name }}</h3>
+        <h4>{{ plan.price }}</h4>
+      </div>
+
+      <ul class="features">
+        <li *ngFor="let feature of plan.features">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+          {{ feature }}
+        </li>
+      </ul>
+
+      <ion-button expand="block" (click)="subscribe(plan)" class="btn-gold">
+        Adquirir
+      </ion-button>
+    </ion-card>
+  </div>
+</ion-content>

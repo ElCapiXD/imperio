@@ -1,0 +1,61 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Estilos globales del proyecto Imperio Gym
+ * Se usa modo oscuro fijo con acentos dorados.
+ */
+
+/* Core CSS required for Ionic components */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for Ionic apps */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/* Ionic Dark Mode (por sistema, pero lo forzamos manualmente) */
+@import "@ionic/angular/css/palettes/dark.system.css";
+
+/* ---------------------------
+   🌙 MODO OSCURO GLOBAL FIJO
+   --------------------------- */
+html, body {
+  --ion-background-color: #0b0b0b !important;
+  --ion-text-color: #ffffff !important;
+  --ion-toolbar-background: #0b0b0b !important;
+  --ion-item-background: rgba(255, 255, 255, 0.03);
+  --ion-border-color: rgba(255, 255, 255, 0.06);
+  --ion-color-primary: #d4af37; /* Dorado */
+  --ion-color-medium: #bdbdbd;
+  color-scheme: dark;
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+/* Asegura que todo se vea bien incluso en componentes internos */
+ion-toolbar,
+ion-content,
+ion-item,
+ion-card {
+  background: var(--ion-background-color) !important;
+  color: var(--ion-text-color) !important;
+}
+
+ion-icon {
+  color: var(--ion-color-primary);
+}
+
+a, button, ion-button {
+  --background: var(--ion-color-primary);
+  --color: #0b0b0b;
+  font-weight: 600;
+}
+

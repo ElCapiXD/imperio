@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Ajustes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="settings-page" fullscreen>
+  <ion-list class="settings-list">
+    <ion-item lines="full">
+      <ion-icon name="notifications-outline" slot="start" color="warning"></ion-icon>
+      <ion-label>Notificaciones</ion-label>
+      <ion-toggle [(ngModel)]="notifications"></ion-toggle>
+    </ion-item>
+
+
+
+    <ion-item lines="full">
+      <ion-icon name="language-outline" slot="start" color="warning"></ion-icon>
+      <ion-label>Idioma</ion-label>
+      <ion-select
+        interface="popover"
+        [(ngModel)]="language"
+        (ionChange)="changeLanguage()"
+      >
+        <ion-select-option value="es">Español</ion-select-option>
+        <ion-select-option value="en">English</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="full" button detail="false" (click)="showAbout()">
+      <ion-icon name="information-circle-outline" slot="start" color="warning"></ion-icon>
+      <ion-label>Acerca de</ion-label>
+    </ion-item>
+
+    <ion-item lines="none" button detail="false" (click)="contactSupport()">
+      <ion-icon name="help-circle-outline" slot="start" color="warning"></ion-icon>
+      <ion-label>Soporte</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="footer">
+    <ion-button expand="block" class="btn-gold" (click)="goBack()">
+      <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+      Volver al inicio
+    </ion-button>
+  </div>
+</ion-content>

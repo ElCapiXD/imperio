@@ -1,0 +1,7 @@
+{
+  "name": "imperio-gym",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

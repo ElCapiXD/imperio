@@ -1,0 +1,138 @@
+:root {
+  --gold: #D4AF37;
+  --bg-dark: #0b0b0b;
+  --muted: #bdbdbd;
+}
+
+/* Reutiliza la estética del login para consistencia */
+.register-page {
+  position: relative;
+  min-height: 100%;
+  background: var(--bg-dark);
+  color: #fff;
+
+  .bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(10,10,10,0.95) 50%, rgba(0,0,0,1) 100%);
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  .brand {
+    margin-top: 10vh;
+    text-align: center;
+    .small-title {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+      span {
+        color: var(--gold);
+      }
+    }
+  }
+
+  .card {
+    width: 100%;
+    max-width: 520px;
+    margin-top: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(212,175,55,0.08);
+
+    .input-item {
+      --background: transparent;
+      --padding-start: 12px;
+      --min-height: 48px;
+      color: #fff;
+      margin-bottom: 8px;
+
+      ion-icon {
+        color: var(--gold);
+        font-size: 20px;
+      }
+
+      ion-input {
+        color: #fff;
+        font-size: 15px;
+      }
+    }
+
+    .error {
+      color: #ff7b7b;
+      font-size: 12px;
+      margin: 0 6px 8px 46px;
+    }
+
+    .btn-gold {
+      margin-top: 12px;
+      --background: var(--gold);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(212,175,55,0.18);
+    }
+
+    .helper-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .have-account {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .link-btn {
+      color: var(--gold);
+      font-size: 13px;
+      background: transparent;
+      border: none;
+      padding: 6px 0;
+    }
+  }
+
+  .footer-note {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+}
+
+/* header oscuro */
+ion-toolbar.toolbar-dark {
+  --background: transparent;
+  color: #fff;
+  --ion-toolbar-background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.back-btn {
+  color: var(--gold);
+}
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .register-page .brand { margin-top: 8vh; }
+  .register-page .card { padding: 14px; border-radius: 10px; }
+}

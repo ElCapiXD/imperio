@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ routineName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="routine-detail-page" fullscreen>
+  <div class="hero">
+    <h2>{{ routineName }}</h2>
+    <p class="subtitle">Sigue los ejercicios y las series. Toca un ejercicio para ver más.</p>
+  </div>
+
+  <div class="ex-list">
+    <ion-card *ngFor="let ex of exercises" class="ex-card" (click)="openExerciseDetail(ex)">
+      <div class="left">
+        <ion-icon name="fitness-outline"></ion-icon>
+      </div>
+      <div class="right">
+        <h3>{{ ex.name }}</h3>
+        <p class="sets">{{ ex.sets }}</p>
+        <p class="note" *ngIf="ex.note">{{ ex.note }}</p>
+      </div>
+    </ion-card>
+  </div>
+
+<div class="start-row">
+  <ion-button expand="block" size="large" (click)="startRoutine()" class="btn-gold">
+    Rutina Terminada
+  </ion-button>
+</div>
+
+</ion-content>

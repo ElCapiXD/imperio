@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="toolbar-dark">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="goBack()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Rutinas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="routines-page" fullscreen>
+  <div class="section-title">
+    <h2>Selecciona una rutina</h2>
+  </div>
+
+  <div class="routine-list">
+    <ion-card class="routine-card" (click)="openRoutine('Pecho y Tríceps')">
+      <ion-icon name="barbell-outline"></ion-icon>
+      <div class="text">
+        <h3>Pecho y Tríceps</h3>
+        <p>Entrenamiento de empuje</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="routine-card" (click)="openRoutine('Espalda y Bíceps')">
+      <ion-icon name="fitness-outline"></ion-icon>
+      <div class="text">
+        <h3>Espalda y Bíceps</h3>
+        <p>Entrenamiento de tracción</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="routine-card" (click)="openRoutine('Piernas')">
+      <ion-icon name="walk-outline"></ion-icon>
+      <div class="text">
+        <h3>Piernas</h3>
+        <p>Fuerza y estabilidad</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="routine-card" (click)="openRoutine('Full Body')">
+      <ion-icon name="body-outline"></ion-icon>
+      <div class="text">
+        <h3>Full Body</h3>
+        <p>Todo el cuerpo</p>
+      </div>
+    </ion-card>
+
+    <ion-card class="routine-card" (click)="openRoutine('Cardio / HIIT')">
+      <ion-icon name="flame-outline"></ion-icon>
+      <div class="text">
+        <h3>Cardio / HIIT</h3>
+        <p>Quema de grasa intensa</p>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
